@@ -1,13 +1,81 @@
+*, *::before, *::after{
+box-sizing: border-box;
+}
+body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{
+margin: 0;
+
+}
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  width: 100vw;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.bouncey{
+  animation-name: bouncey;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+@keyframes bouncey {
+  0%{ 
+     transform: scale(1,1) 
+     translateY(0); 
+  }
+  10%{ 
+     transform: scale(1.1,.9)   
+     translateY(0); 
+  }
+  30%  { 
+     transform: scale(.9,1.1)   
+     translateY(-100px); 
+  }
+  50%  { 
+     transform: scale(1.05,.95) 
+     translateY(0); 
+  }
+  57%  { 
+     transform: scale(1,1)      
+     translateY(-7px); }
+  64%  { 
+     transform: scale(1,1)      
+     translateY(0); 
+  }
+  100% { 
+     transform: scale(1,1)      
+     translateY(0); 
+  }
+}
+
+.bx{
+  font-size:  3rem;
+  color: white;
+}
+.bx,.toggler{
+  font-size: 2rem;
+}
+.main_content{
+  margin-left: 8.5rem;
+}
+.toggle{
+  margin-left: 450px;
+  transition: all cubic-bezier(0.18, 0.89, 0.32, 1.28) 400ms;
+}
+.wrapper{
+display: grid;
+grid-template-columns: 1fr min(200ch, 100%) 1fr;
+}
+.wrapper > *{
+grid-column: 2;
+}
+.full-bleed {
+width:100%;
+grid-column: 1 / 4;
 }
